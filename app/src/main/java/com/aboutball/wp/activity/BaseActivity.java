@@ -1,4 +1,4 @@
-package com.aboutball.wp.aboutball.activity;
+package com.aboutball.wp.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.aboutball.wp.aboutball.R;
+import com.aboutball.wp.R;
 import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.MaterialDialog;
 
@@ -95,6 +95,10 @@ public class BaseActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
     public final void showProgressDialog(int loadingContentResId) {
         showProgressDialog(getResources().getString(loadingContentResId));
+    }
+
+    public final void showProgressDialog() {
+        showProgressDialog("");
     }
 
     public final void showProgressDialog(String loadingContent) {

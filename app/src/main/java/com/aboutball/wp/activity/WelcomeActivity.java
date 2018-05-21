@@ -1,4 +1,4 @@
-package com.aboutball.wp.aboutball.activity;
+package com.aboutball.wp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.ImageView;
 
-import com.aboutball.wp.aboutball.R;
+import com.aboutball.wp.R;
 
 /**
  * Created by wp on 2018/5/21.
@@ -32,7 +32,7 @@ public class WelcomeActivity extends BaseActivity {
         setContentView(R.layout.activity_welcome);
         mWelcomeIv = findViewById(R.id.welcome_img);
         handler.sendEmptyMessageDelayed(0, 2000);
-        showProgressDialog("loadidng");
+        showProgressDialog("loading");
     }
 
     @Override

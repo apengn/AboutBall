@@ -14,4 +14,8 @@
     <string name="cat_topappbar_favorite_menu_item_title">Favorite</string>
     <string name="cat_topappbar_settings_menu_item_title">Settings</string>
     <string name="cat_topappbar_help_and_feedback_menu_item_title">Help &amp; feedback</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

@@ -1,6 +1,5 @@
-package com.aboutball.wp.aboutball.activity;
+package com.aboutball.wp.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
@@ -8,17 +7,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.aboutball.wp.aboutball.R;
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.aboutball.wp.R;
 
-public class MainActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener, View.OnClickListener {
+public class DomeActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener, View.OnClickListener {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dome);
     }
 
     @Override
@@ -53,7 +50,7 @@ public class MainActivity extends BaseActivity implements Toolbar.OnMenuItemClic
     @Override
     protected void onBack() {
 //        super.onBack();
-        Snackbar.make(findViewById(R.id.container), "search", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(findViewById(android.R.id.content), "search", Snackbar.LENGTH_LONG).show();
         showProgressDialog("");
     }
 }

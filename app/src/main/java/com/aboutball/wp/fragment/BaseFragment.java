@@ -1,4 +1,4 @@
-package com.aboutball.wp.aboutball.fragment;
+package com.aboutball.wp.fragment;
 
 import android.content.Context;
 import android.os.Build;
@@ -16,10 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
-import com.aboutball.wp.aboutball.R;
-import com.aboutball.wp.aboutball.activity.BaseActivity;
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.aboutball.wp.R;
+import com.aboutball.wp.activity.BaseActivity;
+
 
 public class BaseFragment extends Fragment implements Toolbar.OnMenuItemClickListener, View.OnClickListener {
 
@@ -33,12 +32,6 @@ public class BaseFragment extends Fragment implements Toolbar.OnMenuItemClickLis
         if (context != null && context instanceof BaseActivity) {
             this.baseActivity = (BaseActivity) context;
         }
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     protected final void setToolbar() {
@@ -110,6 +103,10 @@ public class BaseFragment extends Fragment implements Toolbar.OnMenuItemClickLis
         if (baseActivity != null) {
             baseActivity.showProgressDialog(loadingContent);
         }
+    }
+
+    protected final void showProgressDialog() {
+        showProgressDialog("");
     }
 
     protected final void closeProgressDialog() {
