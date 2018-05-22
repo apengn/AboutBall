@@ -1,20 +1,13 @@
 package com.aboutball.wp.fragment;
 
 import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 
 import com.aboutball.wp.R;
 import com.aboutball.wp.activity.BaseActivity;
@@ -41,10 +34,13 @@ public class BaseFragment extends Fragment implements Toolbar.OnMenuItemClickLis
             toolbar.setTitle(getToolbarTitleStringResId() != 0 ?
                     getResources().getString(getToolbarTitleStringResId())
                     : getToolbarTitle());
-            toolbar.setNavigationIcon(getToolbarBackIcon());
+            if (getToolbarBackIcon() != 0) {
+                toolbar.setNavigationIcon(getToolbarBackIcon());
+                toolbar.setNavigationOnClickListener(this);
+            }
             toolbar.setTitleTextColor(getResources().getColor(getToolbarTitleTextColor()));
             toolbar.setOnMenuItemClickListener(this);
-            toolbar.setNavigationOnClickListener(this);
+
         } else {
             Log.e("BaseFragment", "toolbar is null");
         }
@@ -64,6 +60,7 @@ public class BaseFragment extends Fragment implements Toolbar.OnMenuItemClickLis
 
 
     protected int getToolbarBackIcon() {
+        //R.drawable.ic_arrow_back_black_24dp
         return R.drawable.ic_arrow_back_black_24dp;
     }
 
